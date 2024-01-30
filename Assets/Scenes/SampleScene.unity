@@ -487,6 +487,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Alien Gray
       objectReference: {fileID: 0}
+    - target: {fileID: 2082138494393473835, guid: 7db21e2af48e0a848a3e76755f4d2097,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.08643201
+      objectReference: {fileID: 0}
+    - target: {fileID: 2082138494393473835, guid: 7db21e2af48e0a848a3e76755f4d2097,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.075225666
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 7db21e2af48e0a848a3e76755f4d2097,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 446b0087b3dad3d46bdf97200a0ea32d, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
