@@ -35,10 +35,16 @@ public class AnimationControllerJP : MonoBehaviour
             currentInput = Vector2.SmoothDamp(currentInput, nextInput, ref inputVelocity, 0.5f);
             if(motionState == MotionStates.freelook)
             {
+                //Calculamos la dirección del movimiento
+                Transform cameraTransform = Camera.main.transform;
+                Vector3 camFoward = Vector3.Lerp(cameraTransform.forward, cameraTransform.up, Mathf.Abs(Vector3.Dot(cameraTransform.forward, transform.up)));
 
+                Vector3 projectionVector = Vector3.ProjectOnPlane(camFoward, transform.up);
+
+                //animator.SetFloat(motionXID, currentInput.x);
+                animator.SetFloat(motionYID, currentInput.y);
             }
-            animator.SetFloat(motionXID, currentInput.x);
-            animator.SetFloat(motionYID, currentInput.y);
+            
         }
     }
 
