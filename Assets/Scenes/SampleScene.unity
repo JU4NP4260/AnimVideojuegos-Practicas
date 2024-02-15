@@ -586,7 +586,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2535655168913595855}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.058966175, y: 0.00000009346384, z: 0.0000000055208114, w: 0.99825996}
+  m_LocalRotation: {x: 0.10632159, y: 0.28058684, z: 0.011639188, w: 0.9538508}
   m_LocalPosition: {x: -3.0790422e-17, y: 0.0015221959, z: -1.4901161e-10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1449,6 +1449,7 @@ GameObject:
   m_Component:
   - component: {fileID: 145542596170251129}
   - component: {fileID: 2535655168913595856}
+  - component: {fileID: 2535655168913595857}
   m_Layer: 0
   m_Name: DEF-spine.001
   m_TagString: Untagged
@@ -1468,7 +1469,7 @@ AimConstraint:
   m_Weight: 1
   m_RotationAtRest: {x: -6.760939, y: -0.00000009565941, z: 0.0000016194559}
   m_RotationOffset: {x: 3.9848754, y: 0, z: 0}
-  m_AimVector: {x: 0, y: 0, z: 1}
+  m_AimVector: {x: -0.64, y: 0.42, z: 1}
   m_UpVector: {x: 0, y: 1, z: 0}
   m_WorldUpVector: {x: 0, y: 1, z: 0}
   m_WorldUpObject: {fileID: 0}
@@ -1481,6 +1482,19 @@ AimConstraint:
   m_Sources:
   - sourceTransform: {fileID: 1641399672}
     weight: 1
+--- !u!114 &2535655168913595857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2535655168913595855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a77a03c7cb02d2346b0d4937d83da9be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 5866666020452174554}
 --- !u!1 &2542584947217276796
 GameObject:
   m_ObjectHideFlags: 0
