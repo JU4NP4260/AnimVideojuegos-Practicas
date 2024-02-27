@@ -43,9 +43,9 @@ public class AimController : ThirdPersonShooterPlayerScript
         animator.SetBool("ToggleAim", inputValue > 0);
         aimingCamera.gameObject.SetActive(inputValue > 0);
 
-        playerData.State = inputValue > 0
-            ? PlayerState.AimingMode
-            : PlayerState.NormalMode;
+        //playerData.State = inputValue > 0
+        //    ? PlayerState.AimingMode
+        //    : PlayerState.NormalMode;
     }
 
     //protected override void OnStateChanged(PlayerState state)
