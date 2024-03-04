@@ -25,5 +25,7 @@ namespace ThirdPersonShooter
         {
             playerData.OnStateChanged.RemoveListener(OnStateChanged);
         }
+
+
     }
 }
