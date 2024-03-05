@@ -12,7 +12,13 @@ public static class FootIK_GizmoDrawer
     {
         ProceduralWalkingIK target = componet as ProceduralWalkingIK;
         if(target == null) return; 
-        Gizmos.DrawSphere(target.GetDetectionStartPosition(), 0.05f);
+        Gizmos.color = target.HasTarget ? Color.red : Color.green;
+
+        Vector3 detecStartPos = target.GetDetectionStartPosition();
+
+        Gizmos.DrawSphere(detecStartPos, 0.05f);
+        Handles.Label(detecStartPos, "Punto de detección");
+        Gizmos.DrawLine(detecStartPos, detecStartPos - target.DetectionReference.up * target.MaxDetectionDistance);
     }
 
 }
