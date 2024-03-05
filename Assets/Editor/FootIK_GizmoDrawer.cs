@@ -10,6 +10,9 @@ public static class FootIK_GizmoDrawer
     [DrawGizmo(GizmoType.Active | GizmoType.NonSelected, typeof(ProceduralWalkingIK))]
     public static void DrawGizmos(Component componet, GizmoType gismoType)
     {
-        Gizmos.DrawSphere(componet.transform.position, 1);
+        ProceduralWalkingIK target = componet as ProceduralWalkingIK;
+        if(target == null) return; 
+        Gizmos.DrawSphere(target.GetDetectionStartPosition(), 0.05f);
     }
+
 }
