@@ -915,6 +915,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   detectionReference: {fileID: 1485199545}
   foot: {fileID: 866376095}
+  detectionRange: 0
 --- !u!4 &570184268 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -3153535790306996272, guid: 6b785dcf134495f4db3c7b93d43427ac,
@@ -1102,6 +1103,58 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &845611599
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 845611600}
+  - component: {fileID: 845611601}
+  m_Layer: 0
+  m_Name: detectRef
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &845611600
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 845611599}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1972901419}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1818360608 &845611601
+PositionConstraint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 845611599}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Weight: 1
+  m_TranslationAtRest: {x: 0, y: 0, z: 0}
+  m_TranslationOffset: {x: 0, y: 0, z: 0}
+  m_AffectTranslationX: 1
+  m_AffectTranslationY: 1
+  m_AffectTranslationZ: 1
+  m_Active: 0
+  m_IsLocked: 0
+  m_Sources:
+  - sourceTransform: {fileID: 1485199545}
+    weight: 1
 --- !u!4 &850484058 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1330755669629619180, guid: 6b785dcf134495f4db3c7b93d43427ac,
@@ -1895,7 +1948,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6b785dcf134495f4db3c7b93d43427ac,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 845611600}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6b785dcf134495f4db3c7b93d43427ac,
         type: 3}
@@ -1910,6 +1967,12 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 566457134}
   m_SourcePrefab: {fileID: 100100000, guid: 6b785dcf134495f4db3c7b93d43427ac, type: 3}
+--- !u!4 &1972901419 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6b785dcf134495f4db3c7b93d43427ac,
+    type: 3}
+  m_PrefabInstance: {fileID: 1972901418}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1979543700 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -5115498133408859941, guid: 7db21e2af48e0a848a3e76755f4d2097,
