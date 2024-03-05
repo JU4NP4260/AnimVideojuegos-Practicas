@@ -6,7 +6,7 @@ using UnityEditor;
 public class FootIK : MonoBehaviour
 {
     [SerializeField]
-    private Transform foot, ;
+    private Transform foot, desired;
 
     // Start is called before the first frame update
     void Start()
