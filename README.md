@@ -17,6 +17,8 @@ Video del Rig con IK´s:
 
 ![Pt1_-_Doble_Joint_Constrains](https://github.com/JU4NP4260/AnimVideojuegos-Practicas/assets/81448586/0aeaeef9-0755-402d-b726-7916722a9f25)
 
+##
 
+![Pt2_-_Doble_Joint_Constrains_Working](https://github.com/JU4NP4260/AnimVideojuegos-Practicas/assets/81448586/27565e13-f6fd-4b76-ba3c-6558e3265fa5)
 
 
