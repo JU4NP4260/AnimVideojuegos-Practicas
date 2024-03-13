@@ -13,7 +13,7 @@ https://github.com/JU4NP4260/AnimVideojuegos-Practicas/assets/81448586/ddce0eea-
 
 # Proyecto #2 - IK´s Interactivos
 
-Video del Rig con IK´s:
+Videos del Rig con IK´s:
 
 ![Pt1_-_Doble_Joint_Constrains](https://github.com/JU4NP4260/AnimVideojuegos-Practicas/assets/81448586/0aeaeef9-0755-402d-b726-7916722a9f25)
 
