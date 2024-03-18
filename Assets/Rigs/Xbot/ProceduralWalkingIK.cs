@@ -1,16 +1,28 @@
+using JetBrains.Annotations;
 using UnityEngine;
+using System;
+using UnityEngine.Events;
+
+[Serializable] 
+public class FloatEvent : UnityEvent<float>
+{
+
+}
 
 [RequireComponent(typeof(Animator))]
 public class ProceduralWalkingIK : MonoBehaviour
 {
     [SerializeField] private Transform detectionReference;
-    [SerializeField] private Transform foot;
+    [SerializeField] private Transform foot, root;
     [SerializeField][Range(0, 1)] private float detectionRange;
     [SerializeField] private float maxDetectionDistance;
     [SerializeField] private AvatarIKGoal ikGoal;
     [SerializeField] private Vector2 snapOffsets;
     [SerializeField] private string snapOffsetParameter;
     [SerializeField] private float snapSpeed = 15;
+    [SerializeField] private Vector3 snapRotationOffset;
+
+    public FloatEvent onIkSolved;
 
     private Animator animator;
     private bool hasTarget;
@@ -50,6 +62,14 @@ public class ProceduralWalkingIK : MonoBehaviour
         float snapInterpolator = animator.GetFloat(snapOffsetParameter);
         float solvedSnapOffset = Mathf.Lerp(snapOffsets.x, snapOffsets.y, snapInterpolator);
         animator.SetIKPosition(ikGoal, currentIkPosition + detectionReference.up * solvedSnapOffset);
+
+        animator.SetIKRotationWeight(ikGoal, snapInterpolator);
+        Quaternion rot = Quaternion.LookRotation(ikTarget.normal) * Quaternion.Euler(snapRotationOffset);
+        animator.SetIKRotation(ikGoal, rot);
+
+        Vector3 characterSpaceFoot = root.InverseTransformPoint(foot.position);
+
+        onIkSolved?.Invoke(characterSpaceFoot.y);
     }
     public Transform DetectionReference => detectionReference;
     public float MaxDetectionDistance => maxDetectionDistance;

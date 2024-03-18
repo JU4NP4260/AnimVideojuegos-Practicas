@@ -21,4 +21,16 @@ public static class FootIK_GizmoDrawer
         Gizmos.DrawLine(detecStartPos, detecStartPos - target.DetectionReference.up * target.MaxDetectionDistance);
     }
 
+    [DrawGizmo(GizmoType.Active | GizmoType.NonSelected, typeof(FootIkRootSolver))]
+    public static void DrawGizmoForRoot(Component component, GizmoType gizmoType)
+    {
+        FootIkRootSolver target = component as FootIkRootSolver;
+        if(target == null ) return;
+
+        Handles.DrawWireDisc(target.transform.position, target.transform.up, 0.7f);
+        Handles.color = new Color(0, 1, 1, 0.5f);
+        Handles.DrawWireDisc(target.RootTarget, target.transform.up, 0.7f);
+
+    }
+
 }
