@@ -1,0 +1,54 @@
+{
+    "name": "NEwInputLook",
+    "maps": [
+        {
+            "name": "Main",
+            "id": "8b8f02a1-cd25-4cbd-a365-c7dc54346090",
+            "actions": [
+                {
+                    "name": "Look",
+                    "type": "Value",
+                    "id": "245dd3dc-2d4b-4547-81d5-cd763211a2c7",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Aim",
+                    "type": "Button",
+                    "id": "711be4ff-a8cb-4f3f-9489-0e19e8b3e628",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "0df8184d-6187-4c01-ae7c-c4d0b004ee76",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Look",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "95fa1e59-9c87-4746-b295-e49b7afdfbfa",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Aim",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
