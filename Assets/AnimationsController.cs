@@ -4,8 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using CallbackContext = UnityEngine.InputSystem.InputAction.CallbackContext;
-
-
 public class AnimationsController : MonoBehaviour
 {
     enum MotionState
@@ -17,7 +15,7 @@ public class AnimationsController : MonoBehaviour
     private Vector2 nextInput;
     private Vector2 inputVelocity;
     private Animator animator;
-    private int motionXId, motionYId;
+    private int motionXId, motionYId, rootMotionId;
     private MotionState motionState = MotionState.NotInCombat;
     private Vector3 proyectedVector;
 
@@ -31,6 +29,7 @@ public class AnimationsController : MonoBehaviour
         animator = GetComponent<Animator>();
         motionXId = Animator.StringToHash("MotionX");
         motionYId = Animator.StringToHash("MotionY");
+        rootMotionId = Animator.StringToHash("MotionRoot");
     }
 
     public void Move(CallbackContext context)
@@ -68,7 +67,12 @@ public class AnimationsController : MonoBehaviour
             transform.rotation = currentRotation;
             //Setear la animacion
             
+            
             animator.SetFloat(motionYId, proyectedVector.magnitude);
+            
+            animator.SetFloat(rootMotionId, 0.05f);
+   
+
         }
 
         
@@ -77,6 +81,7 @@ public class AnimationsController : MonoBehaviour
         {
             nextInput = Vector2.zero;
             nextInput.Set(Mathf.Clamp(nextInput.x, -0.1f,0.1f),Mathf.Clamp(nextInput.y,-0.1f,0.1f));
+            animator.SetFloat(rootMotionId, 0);
         }
 
     }
