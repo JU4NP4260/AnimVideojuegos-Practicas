@@ -1,8 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
-<<<<<<< HEAD
---- !u!1102 &-7037367831950666068
-=======
 --- !u!1102 &-8386880791445747761
 AnimatorState:
   serializedVersion: 6
@@ -58,7 +55,6 @@ AnimatorState:
   m_CycleOffsetParameter: 
   m_TimeParameter: 
 --- !u!1102 &-5328185636198945165
->>>>>>> main
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
@@ -68,7 +64,8 @@ AnimatorState:
   m_Name: mixamo_com
   m_Speed: 1
   m_CycleOffset: 0
-  m_Transitions: []
+  m_Transitions:
+  - {fileID: 7748798943715034440}
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -78,7 +75,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -203655887218126122, guid: 0a13370173bea10419c6bc5a648e3a76,
+  m_Motion: {fileID: -203655887218126122, guid: 4eb5eec7757eefe498f3a7afdb83adf4,
     type: 3}
   m_Tag: 
   m_SpeedParameter: 
@@ -131,6 +128,18 @@ AnimatorController:
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
+  - serializedVersion: 5
+    m_Name: UpperBody
+    m_StateMachine: {fileID: 4692634302656251662}
+    m_Mask: {fileID: 31900000, guid: bb2c8f2950d743e4d9a8b1fd5fdfdedc, type: 2}
+    m_Motions: []
+    m_Behaviours: []
+    m_BlendingMode: 0
+    m_SyncedLayerIndex: -1
+    m_DefaultWeight: 1
+    m_IKPass: 0
+    m_SyncedLayerAffectsTiming: 0
+    m_Controller: {fileID: 9100000}
 --- !u!1107 &647796975721958460
 AnimatorStateMachine:
   serializedVersion: 6
@@ -141,28 +150,17 @@ AnimatorStateMachine:
   m_Name: Base Layer
   m_ChildStates:
   - serializedVersion: 1
-<<<<<<< HEAD
-    m_State: {fileID: -7037367831950666068}
-    m_Position: {x: 340, y: 150, z: 0}
-=======
     m_State: {fileID: -8386880791445747761}
-    m_Position: {x: 388.43478, y: 143.17392, z: 0}
->>>>>>> main
+    m_Position: {x: 340, y: 120, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
-  m_EntryTransitions:
-  - {fileID: 6039944589576719025}
+  m_EntryTransitions: []
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: 50, y: 20, z: 0}
-  m_EntryPosition: {x: 30, y: 140, z: 0}
+  m_EntryPosition: {x: 50, y: 120, z: 0}
   m_ExitPosition: {x: 370, y: 50, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
-<<<<<<< HEAD
-  m_DefaultState: {fileID: -7037367831950666068}
---- !u!1109 &6039944589576719025
-AnimatorTransition:
-=======
   m_DefaultState: {fileID: -8386880791445747761}
 --- !u!1107 &4692634302656251662
 AnimatorStateMachine:
@@ -216,7 +214,6 @@ AnimatorStateTransition:
   m_CanTransitionToSelf: 1
 --- !u!1101 &7748798943715034440
 AnimatorStateTransition:
->>>>>>> main
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -224,11 +221,19 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions: []
   m_DstStateMachine: {fileID: 0}
-  m_DstState: {fileID: -7037367831950666068}
+  m_DstState: {fileID: 0}
   m_Solo: 0
   m_Mute: 0
-  m_IsExit: 0
-  serializedVersion: 1
+  m_IsExit: 1
+  serializedVersion: 3
+  m_TransitionDuration: 0.25
+  m_TransitionOffset: 0
+  m_ExitTime: 0.91935486
+  m_HasExitTime: 1
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
 --- !u!206 &8007118465557317645
 BlendTree:
   m_ObjectHideFlags: 1
