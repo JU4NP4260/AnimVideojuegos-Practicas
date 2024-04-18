@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -24,6 +25,8 @@ public class NewMovementChar : MonoBehaviour
 
     private bool targetLocked = false;
     [SerializeField] private GameObject targetGameObject;
+
+    [SerializeField] private GameObject virtualCamera1, virtualCamera2;
 
     void Start()
     {
@@ -61,7 +64,11 @@ public class NewMovementChar : MonoBehaviour
         if (targetLocked)
         {
             MovePlayer_Locked();
-            gameObject.transform.rotation = Quaternion.LookRotation(targetGameObject.transform.position, transform.up);
+            gameObject.transform.LookAt(targetGameObject.transform.position);
+            
+            virtualCamera1.SetActive(false);
+            virtualCamera2.SetActive(true);
+
         }
         else
         {
@@ -70,8 +77,6 @@ public class NewMovementChar : MonoBehaviour
             Transform cameraTransform = Camera.main.transform;
             Vector3 cameraForward = Vector3.Lerp(cameraTransform.forward, cameraTransform.up,
                 Mathf.Abs(Vector3.Dot(cameraTransform.forward, transform.up)));
-
-            Vector3 cameraRight = cameraTransform.right;
 
             projectedVector = Vector3.ProjectOnPlane(cameraForward, transform.up).normalized /** verticalInput + cameraRight * horizontalInput*/;
             projectedVector = projectedVector.normalized;
@@ -101,13 +106,26 @@ public class NewMovementChar : MonoBehaviour
     {
         if(logic)
         {
-            if(Input.GetKeyDown(KeyCode.Q))
+            
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                Debug.Log("Locking on target");
+
                 animator.SetBool("TargetLocked", false);
+                targetLocked = false;
+            }
         }
         else if(!logic)
         {
+            Debug.Log("is Locked on? " + logic);
+
             if (Input.GetKeyDown(KeyCode.Q))
+            {
+                Debug.Log("Freeing camera");
+
                 animator.SetBool("TargetLocked", true);
+                targetLocked = true;
+            }
         }
     }
 
