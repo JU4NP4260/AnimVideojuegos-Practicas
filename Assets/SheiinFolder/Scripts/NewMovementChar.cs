@@ -1,50 +1,114 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
+
 
 public class NewMovementChar : MonoBehaviour
 {
     private Rigidbody rb;
     private Animator animator;
     private int motionXId, motionYId;
-    //private Vector2 inputVelocity;
+    private Vector2 inputVelocity;
     private Vector3 projectedVector;
     private Quaternion currentRotation;
-    //private Vector2 nextInput, currentInput;
+    private Quaternion lastRotation;
+    private Vector2 currentInput = new Vector2(0, 0);
 
     [SerializeField] float MoveSpeed = 10;
 
-    // Start is called before the first frame update
+    PlayerInput playerInput;
+    InputAction moveAction;
+    [SerializeField] private float smoothInputSpeed = 0.3f;
+
+    private bool targetLocked = false;
+    [SerializeField] private GameObject targetGameObject;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
         motionXId = Animator.StringToHash("MotionX");
         motionYId = Animator.StringToHash("MotionY");
+
+        playerInput = GetComponent<PlayerInput>();
+        moveAction = playerInput.actions.FindAction("Move");
+
+        Cursor.lockState = CursorLockMode.Confined;
     }
 
-    // Update is called once per frame
+    private void MovePlayer_Locked()
+    {
+        Vector2 inputMove = moveAction.ReadValue<Vector2>();
+        currentInput = Vector2.SmoothDamp(currentInput, inputMove, ref inputVelocity, smoothInputSpeed);
+
+        animator.SetFloat("MotionX", currentInput.x);
+        animator.SetFloat("MotionY", currentInput.y);
+    }
+
+    private void MovePlayer_Free()
+    {
+        Vector2 inputMove = moveAction.ReadValue<Vector2>();
+        currentInput = Vector2.SmoothDamp(currentInput, inputMove, ref inputVelocity, smoothInputSpeed);
+
+        animator.SetFloat("MotionY", currentInput.y * 2);
+        animator.SetFloat("MotionX", 0);        
+    }
+
     void Update()
     {
-        float horizontalInput = Input.GetAxisRaw("Horizontal");
-        float verticalInput = Input.GetAxisRaw("Vertical");
+        if (targetLocked)
+        {
+            MovePlayer_Locked();
+            gameObject.transform.rotation = Quaternion.LookRotation(targetGameObject.transform.position, transform.up);
+        }
+        else
+        {
+            MovePlayer_Free();
 
+            Transform cameraTransform = Camera.main.transform;
+            Vector3 cameraForward = Vector3.Lerp(cameraTransform.forward, cameraTransform.up,
+                Mathf.Abs(Vector3.Dot(cameraTransform.forward, transform.up)));
+
+            Vector3 cameraRight = cameraTransform.right;
+
+            projectedVector = Vector3.ProjectOnPlane(cameraForward, transform.up).normalized /** verticalInput + cameraRight * horizontalInput*/;
+            projectedVector = projectedVector.normalized;
+
+            currentRotation = Quaternion.LookRotation(projectedVector, transform.up);
+
+            if(currentInput.y > 0.2f)
+            {
+                
+                gameObject.transform.rotation = Quaternion.Slerp(lastRotation, currentRotation, 2);
+            }
+            else
+            {
+                lastRotation = gameObject.transform.rotation;
+            }
+        }
+
+        LockOnTarget(targetLocked);
+        
+        
         //currentInput = Vector2.SmoothDamp(currentInput, nextInput, ref inputVelocity, 0.5f);
 
-        Transform cameraTransform = Camera.main.transform;
-        Vector3 cameraForward = Vector3.Lerp(cameraTransform.forward, cameraTransform.up,
-            Mathf.Abs(Vector3.Dot(cameraTransform.forward, transform.up)));
-
-        Vector3 cameraRight = cameraTransform.right;
-
-        projectedVector = Vector3.ProjectOnPlane(cameraForward, transform.up).normalized /** verticalInput + cameraRight * horizontalInput*/;
-        projectedVector = projectedVector.normalized;
-
-        currentRotation = Quaternion.LookRotation(projectedVector, transform.up);
-
-        transform.rotation = currentRotation;
-
-        animator.SetFloat("MotionX", horizontalInput);
-        animator.SetFloat("MotionY", verticalInput);
+        
     }
+
+    private void LockOnTarget(bool logic)
+    {
+        if(logic)
+        {
+            if(Input.GetKeyDown(KeyCode.Q))
+                animator.SetBool("TargetLocked", false);
+        }
+        else if(!logic)
+        {
+            if (Input.GetKeyDown(KeyCode.Q))
+                animator.SetBool("TargetLocked", true);
+        }
+    }
+
 }
