@@ -21,4 +21,14 @@ Videos del Rig con IK´s:
 
 ![Pt2_-_Doble_Joint_Constrains_Working](https://github.com/JU4NP4260/AnimVideojuegos-Practicas/assets/81448586/27565e13-f6fd-4b76-ba3c-6558e3265fa5)
 
+# Proyecto #3 - Controlador de personaje "Souls-like"
+![WhatsApp Image 2024-04-17 at 22 17 04_5cdded56](https://github.com/JU4NP4260/AnimVideojuegos-Practicas/assets/82065985/ba627d62-0b7d-4bc6-ade2-996fcb029b19)
+
+Movimiento independiente de la cámara
+
+https://github.com/JU4NP4260/AnimVideojuegos-Practicas/assets/82065985/7b133d96-155c-4bd0-a2bf-5fde4124f29c
+
+Auto apuntado y movimiento dependiente de la camara
+
+https://github.com/JU4NP4260/AnimVideojuegos-Practicas/assets/82065985/ce3c669d-cb40-4fd0-bd42-91cee60dcdde
 
