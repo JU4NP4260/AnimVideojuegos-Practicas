@@ -3456,6 +3456,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 10
+  smoothInputSpeed: 0.2
+  targetGameObject: {fileID: 0}
+  virtualCamera1: {fileID: 0}
+  virtualCamera2: {fileID: 0}
 --- !u!1 &8244004643297140994
 GameObject:
   m_ObjectHideFlags: 0

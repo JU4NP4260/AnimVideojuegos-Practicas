@@ -15,19 +15,28 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Aim",
-                    "type": "Button",
-                    "id": "711be4ff-a8cb-4f3f-9489-0e19e8b3e628",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Move",
                     "type": "Value",
                     "id": "f63e8a46-81dc-4021-a1bd-772c82d44e89",
                     "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Attack",
+                    "type": "Value",
+                    "id": "13968205-821f-4a41-99e9-b5c8c419318c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "HeavyAttack",
+                    "type": "Value",
+                    "id": "6845f525-12b5-4abf-a19d-c14746f28928",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -42,17 +51,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "Look",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "95fa1e59-9c87-4746-b295-e49b7afdfbfa",
-                    "path": "<Mouse>/rightButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Aim",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -110,6 +108,28 @@
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "7bd1ead2-764c-45fe-9d54-4192af2db237",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "538aa959-5141-49ff-a235-a303945cfc61",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "HeavyAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
