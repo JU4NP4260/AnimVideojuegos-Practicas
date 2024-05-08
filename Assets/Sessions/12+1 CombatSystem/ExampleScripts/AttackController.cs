@@ -50,7 +50,10 @@ public class AttackController : MonoBehaviour
         canAttackAgain = Animator.GetFloat("ComboFollowUpWindow") > 0.7f;
         if (canAttackAgain)
         {
-            PlayerState.ModifyStamina(staminaRegenRate * Time.deltaTime);
+            if (PlayerState.currentStamina < PlayerState.maxBaseStamina)
+            {
+                PlayerState.ModifyStamina(staminaRegenRate * Time.deltaTime);
+            }          
         }
     }
 
@@ -80,6 +83,20 @@ public class AttackController : MonoBehaviour
         else
         {
             Animator.SetFloat("ChargeSpeed", 1);
+        }
+    }
+
+    public void OnUlti(InputAction.CallbackContext ctx)
+    {
+        if (PlayerState.CurrentStamina < 100) return;
+        PlayerState.ModifyStamina(-playerState.maxBaseStamina);
+
+        
+
+        bool val = ctx.ReadValueAsButton();
+        if (val)
+        {
+            Animator.SetTrigger("UltiTrigger");
         }
     }
 

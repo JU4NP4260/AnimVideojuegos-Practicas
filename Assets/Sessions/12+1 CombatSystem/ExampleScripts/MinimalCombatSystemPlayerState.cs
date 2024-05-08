@@ -5,16 +5,20 @@ using UnityEngine;
 
 public class MinimalCombatSystemPlayerState : MonoBehaviour
 {
-    [SerializeField] private float maxBaseStamina;
+    [SerializeField] public float maxBaseStamina;
 
-    private float currentStamina;
+    [SerializeField] public float currentStamina;
 
     public FloatEvent onStaminaModified;
 
     public void ModifyStamina(float modifyValue)
     {
-        currentStamina += modifyValue;
-        onStaminaModified?.Invoke(currentStamina / maxBaseStamina);
+        //if (currentStamina < maxBaseStamina)
+        //{
+            currentStamina += modifyValue;
+            onStaminaModified?.Invoke(currentStamina / maxBaseStamina);
+        //}
+        
     }
     
     private void Awake()
