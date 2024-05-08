@@ -67,9 +67,6 @@ public class AttackController : MonoBehaviour
 
     public void OnHeavyAttack(InputAction.CallbackContext ctx)
     {
-        
-        
-        
         bool val = ctx.ReadValueAsButton();
         if (val)
         {
@@ -85,4 +82,6 @@ public class AttackController : MonoBehaviour
             Animator.SetFloat("ChargeSpeed", 1);
         }
     }
+
+
 }
