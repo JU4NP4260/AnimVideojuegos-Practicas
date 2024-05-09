@@ -32,3 +32,7 @@ Auto apuntado y movimiento dependiente de la camara
 
 https://github.com/JU4NP4260/AnimVideojuegos-Practicas/assets/82065985/ce3c669d-cb40-4fd0-bd42-91cee60dcdde
 
+# Proyecto #4 - Sistema Ofensivo
+
+https://github.com/JU4NP4260/AnimVideojuegos-Practicas/assets/82065985/9505362b-4d5c-49a0-890c-fb0803eeacca
+
