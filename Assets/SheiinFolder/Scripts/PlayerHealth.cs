@@ -24,6 +24,9 @@ public class PlayerHealth : MonoBehaviour
         float hitDirX = Mathf.Clamp(hitDirection.z, -1f, 1f);
         float hitDirY = Mathf.Clamp(hitDirection.y, -1f, 1f);
 
+        Debug.Log(hitDirX);
+        Debug.Log(hitDirY);
+
         animator.SetFloat("HitDirX", hitDirX);
         animator.SetFloat("HitDirY", hitDirY);
         animator.SetTrigger("GetHit");
