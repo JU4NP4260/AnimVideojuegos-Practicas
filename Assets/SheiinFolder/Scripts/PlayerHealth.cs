@@ -9,6 +9,8 @@ public class PlayerHealth : MonoBehaviour
     private Animator animator;
     private Collider playerCollider;
 
+    [SerializeField] private GameObject restartBtn;
+
     void Start()
     {
         currentHealth = maxHealth;
@@ -16,6 +18,7 @@ public class PlayerHealth : MonoBehaviour
         healthBar.value = currentHealth;
         animator = GetComponent<Animator>();
         playerCollider = GetComponent<Collider>();
+        restartBtn.SetActive(false);
 
         // Ensure the player has a Rigidbody component
         Rigidbody rb = GetComponent<Rigidbody>();
@@ -61,6 +64,8 @@ public class PlayerHealth : MonoBehaviour
     void Die()
     {
         animator.SetTrigger("Die");
+        
+        restartBtn.SetActive(true);
         // Add any additional logic for when the player dies
     }
 }
