@@ -427,8 +427,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -5, y: 0}
-  m_SizeDelta: {x: -20, y: 0}
+  m_AnchoredPosition: {x: 2.5, y: 0}
+  m_SizeDelta: {x: -5, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &330585543
 GameObject:
@@ -971,7 +971,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 20}
+  m_SizeDelta: {x: 524.9, y: 49.13}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1084201732
 MonoBehaviour:
@@ -1037,7 +1037,6 @@ GameObject:
   - component: {fileID: 1110045640}
   - component: {fileID: 1110045639}
   - component: {fileID: 1110045643}
-  - component: {fileID: 1110045644}
   m_Layer: 0
   m_Name: Hazard
   m_TagString: Untagged
@@ -1125,8 +1124,8 @@ Transform:
   m_GameObject: {fileID: 1110045638}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.35, y: 0.33, z: 1.89}
-  m_LocalScale: {x: 1.51, y: 0.4, z: 0.4}
+  m_LocalPosition: {x: 2.3, y: 0.33, z: 0.04}
+  m_LocalScale: {x: 0.09186991, y: 0.095128, z: 0.10484}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1143,34 +1142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 423d6f1604954564bbfda4544adbc5bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
---- !u!54 &1110045644
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1110045638}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
+  damage: 1
 --- !u!1001 &1337395332
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1662,7 +1634,7 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 8336526649982156450, guid: f32d1c7144de39b449b98d2ced918990,
         type: 3}
-      insertIndex: -1
+      insertIndex: 0
       addedObject: {fileID: 1084201731}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f32d1c7144de39b449b98d2ced918990, type: 3}
@@ -3072,10 +3044,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2.5558605
+  m_Radius: 0.511237
+  m_Height: 1.9880557
   m_Direction: 1
-  m_Center: {x: 0, y: 0.77793026, z: 0}
+  m_Center: {x: 0, y: 1.0618327, z: -0.011237025}
 --- !u!54 &6614189367899178290
 Rigidbody:
   m_ObjectHideFlags: 0

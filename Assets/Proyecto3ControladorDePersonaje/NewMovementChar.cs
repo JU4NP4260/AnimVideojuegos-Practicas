@@ -120,7 +120,7 @@ public class NewMovementChar : MonoBehaviour
         }
         else if(!logic)
         {
-            Debug.Log("is Locked on? " + logic);
+            //Debug.Log("is Locked on? " + logic);
 
             if (Input.GetKeyDown(KeyCode.Q))
             {

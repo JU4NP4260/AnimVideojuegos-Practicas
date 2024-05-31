@@ -6,13 +6,13 @@ public class Hazard : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        PlayerHealth playerHealth = other.gameObject.GetComponent<PlayerHealth>();
-        Debug.Log("Collision");
+        Debug.Log("Trigger detected with: " + other.gameObject.name);
+
+        PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
         if (playerHealth != null)
         {
-            Debug.Log("Collision with player");
-            Vector3 hitDirection = (other.transform.position - transform.position).normalized;
-            playerHealth.TakeDamage(damage, hitDirection);
+            Vector3 contactPoint = other.ClosestPoint(transform.position);
+            playerHealth.TakeDamage(damage, contactPoint);
         }
     }
 }
